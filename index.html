@@ -255,12 +255,7 @@ footer .container{display:flex;justify-content:space-between;gap:20px}
   
 
 
-.seo-footer-copy{
-  width:min(var(--max),calc(100% - 48px));margin:0 auto 28px;
-  color:#555;font-size:10px;line-height:1.8;max-width:900px;
-}
 .seo-footer-copy strong{color:#777}
-@media(max-width:600px){.seo-footer-copy{width:calc(100% - 28px);font-size:9px}}
 
 
 .cert-label{
@@ -280,6 +275,34 @@ footer .container{display:flex;justify-content:space-between;gap:20px}
 .cert-card .cert-issuer{color:var(--yellow);font-weight:600;margin-bottom:5px}
 @media(max-width:900px){.cert-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.cert-grid{grid-template-columns:1fr}}
+
+
+.web-project-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.web-project{border:1px solid #292929;background:#090909;overflow:hidden;transition:.35s}
+.web-project:hover{border-color:var(--yellow);transform:translateY(-7px);box-shadow:0 18px 55px rgba(0,0,0,.5),0 0 30px rgba(255,212,0,.09)}
+.web-project-visual{height:270px;position:relative;overflow:hidden;background:#060606;border-bottom:1px solid #252525}
+.web-project-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(255,212,0,.035));pointer-events:none}
+.browser-bar{height:34px;border-bottom:1px solid #222;display:flex;align-items:center;gap:5px;padding:0 12px;color:#555;font:600 7px Orbitron;letter-spacing:1px}
+.browser-bar span{width:6px;height:6px;border:1px solid #555;border-radius:50%}
+.browser-bar b{margin-left:8px;font-size:7px;color:#555}
+.web-project-screen{height:236px;display:flex;flex-direction:column;justify-content:center;padding:34px;position:relative}
+.web-project-screen:before{content:"";position:absolute;width:190px;height:190px;border:1px solid rgba(255,212,0,.13);border-radius:50%;right:-45px;top:20px;box-shadow:0 0 50px rgba(255,212,0,.06)}
+.web-project-screen small{font:700 9px Orbitron;color:var(--yellow);letter-spacing:2px}
+.web-project-screen strong{font:900 clamp(30px,4vw,54px)/.9 Orbitron;letter-spacing:-2px;margin:14px 0;text-shadow:0 0 25px rgba(255,212,0,.12)}
+.web-project-screen em{font:600 8px Orbitron;color:#666;letter-spacing:2px;font-style:normal}
+.exotics-visual{background:radial-gradient(circle at 80% 50%,rgba(255,212,0,.12),transparent 30%),linear-gradient(135deg,#090909,#111)}
+.harja-visual{background:radial-gradient(circle at 20% 60%,rgba(0,229,255,.08),transparent 30%),linear-gradient(135deg,#070707,#101010)}
+.web-project-body{padding:25px}
+.web-project-body h3{font:800 23px Orbitron;margin:12px 0 9px}
+.web-project-body p{font-size:12px;color:#888;min-height:56px}
+.web-project-meta{display:flex;justify-content:space-between;border-top:1px solid #222;margin:20px 0;padding-top:12px;font:700 8px Orbitron;color:#555;letter-spacing:1px}
+.web-project-meta span:first-child{color:var(--yellow)}
+.web-project-body .btn{margin-top:3px}
+@media(max-width:700px){.web-project-grid{grid-template-columns:1fr}.web-project-visual{height:235px}.web-project-screen{height:201px}}
+
+
+.tgdmx-visual{background:radial-gradient(circle at 70% 40%,rgba(255,212,0,.16),transparent 28%),linear-gradient(135deg,#050505,#151515)}
+.tgdmx-visual .web-project-screen strong{letter-spacing:-4px}
 
 </style>
 
@@ -390,7 +413,7 @@ footer .container{display:flex;justify-content:space-between;gap:20px}
   <div class="container nav-inner">
     <a class="logo" href="#top">ALBERT<span>.TG</span></a>
     <div class="navlinks">
-      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#work">Work</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Capabilities</a><a href="#work">Work</a><a href="#web-projects">Web Projects</a><a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -515,6 +538,72 @@ footer .container{display:flex;justify-content:space-between;gap:20px}
 </div>
 </section>
 
+
+<section class="section" id="web-projects">
+<div class="container">
+  <div class="section-head reveal">
+    <div><div class="eyebrow">07 / WEB PROJECTS</div><h2>Built on<br>the web.</h2></div>
+    <p class="section-intro">Selected websites and digital experiences created as part of Albert's technology, creative and digital ecosystem work.</p>
+  </div>
+
+  <div class="web-project-grid">
+    <article class="web-project reveal">
+      <div class="web-project-visual exotics-visual">
+        <div class="browser-bar"><span></span><span></span><span></span><b>EXOTICS INDONESIA</b></div>
+        <div class="web-project-screen">
+          <small>GAMING NEWS &amp; MEDIA</small>
+          <strong>EXOTICS<br>INDONESIA</strong>
+          <em>NEWS · GAMES · TECH</em>
+        </div>
+      </div>
+      <div class="web-project-body">
+        <div class="tag">WEB / GAMING MEDIA</div>
+        <h3>Exotics Indonesia</h3>
+        <p>Gaming news and media platform featuring gaming content, gallery, news timeline, archive and Exotics Studio game development projects.</p>
+        <div class="web-project-meta"><span>LIVE WEBSITE</span><span>01</span></div>
+        <a class="btn" href="https://exotics-indonesia.netlify.app/" target="_blank" rel="noopener noreferrer">VISIT WEBSITE ↗</a>
+      </div>
+    </article>
+
+    <article class="web-project reveal">
+      <div class="web-project-visual harja-visual">
+        <div class="browser-bar"><span></span><span></span><span></span><b>HARJADITUTIRING.COM</b></div>
+        <div class="web-project-screen">
+          <small>WEB EXPERIENCE</small>
+          <strong>HARJA<br>DITUTIRING</strong>
+          <em>DIGITAL EXPERIENCE</em>
+        </div>
+      </div>
+      <div class="web-project-body">
+        <div class="tag">WEB / EDUCATION / STEM</div>
+        <h3>Harjadi Tutoring</h3>
+        <p>International tutoring platform for Mathematics, Physics and Chemistry, designed around Cambridge, IGCSE, AS &amp; A Level, IB and other international-school pathways.</p>
+        <div class="web-project-meta"><span>LIVE WEBSITE</span><span>02</span></div>
+        <a class="btn" href="https://harjaditutoring.com/" target="_blank" rel="noopener noreferrer">VISIT WEBSITE ↗</a>
+      </div>
+
+    <article class="web-project reveal">
+      <div class="web-project-visual tgdmx-visual">
+        <div class="browser-bar"><span></span><span></span><span></span><b>TGDMX.VERCEL.APP</b></div>
+        <div class="web-project-screen">
+          <small>DIGITAL MARKETING SYSTEM</small>
+          <strong>TGDM<br><span style="color:var(--yellow)">X</span></strong>
+          <em>THE GREAT DIGITAL MARKETING EXPERIENCE</em>
+        </div>
+      </div>
+      <div class="web-project-body">
+        <div class="tag">WEB APP / DIGITAL MARKETING</div>
+        <h3>TGDMX</h3>
+        <p>A digital marketing workspace and monitoring ecosystem built around team workflows, analytics, role-based access and digital performance operations.</p>
+        <div class="web-project-meta"><span>LIVE WEB APP</span><span>03</span></div>
+        <a class="btn" href="https://tgdmx.vercel.app/" target="_blank" rel="noopener noreferrer">VISIT WEBSITE ↗</a>
+      </div>
+    </article>
+    </article>
+  </div>
+</div>
+</section>
+
 <section class="section">
 <div class="container">
   <div class="section-head reveal"><div><div class="eyebrow">05 / CREDENTIALS</div><h2>Education &<br>certifications.</h2></div></div>
@@ -585,14 +674,6 @@ footer .container{display:flex;justify-content:space-between;gap:20px}
 </div>
 </section>
 </main>
-
-
-<div class="seo-footer-copy" aria-label="Professional profile summary">
-  <p><strong>Albert Tanaputra Gunawan</strong> is a Digital Marketing Supervisor in Indonesia with experience in social media marketing,
-  performance marketing, SEO, digital business operations, analytics, gamification, game design, mobile development and technology.
-  Explore his professional experience, selected projects, education, certifications and digital growth work through Albert.TG.</p>
-</div>
-
 <footer><div class="container"><span>© 2026 Albert Tanaputra Gunawan</span><span>BUILT FOR THE NEXT DIGITAL EXPERIENCE</span></div></footer>
 
 <script>
@@ -832,5 +913,167 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 })();
 
 </script>
+
+
+<!-- CYBER DEFENSE / DEVTOOLS EASTER EGG -->
+<script>
+(() => {
+  const msg = "WHAT YOU TRyna DO BRO? 😭";
+  const sub = "Nice try. The source is not getting a free backstage pass.";
+
+  const toast = document.createElement('div');
+  toast.id = 'cyberDefenseToast';
+  toast.innerHTML = `<div class="cdt-title">⚠ SYSTEM NOTICE</div><div class="cdt-msg"></div><div class="cdt-sub"></div>`;
+  document.body.appendChild(toast);
+  toast.querySelector('.cdt-msg').textContent = msg;
+  toast.querySelector('.cdt-sub').textContent = sub;
+
+  const showDefense = () => {
+    toast.classList.add('show');
+    clearTimeout(window.__cdtTimer);
+    window.__cdtTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+  };
+
+  // Block common browser shortcuts used to open developer tools/source.
+  document.addEventListener('contextmenu', e => { e.preventDefault(); showDefense(); }, true);
+  document.addEventListener('keydown', e => {
+    const k = String(e.key).toLowerCase();
+    const blocked =
+      e.key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(k)) ||
+      (e.ctrlKey && ['u','s'].includes(k)) ||
+      (e.metaKey && e.altKey && ['i','j','c'].includes(k)) ||
+      (e.metaKey && ['u','s'].includes(k));
+    if (blocked) {
+      e.preventDefault();
+      e.stopPropagation();
+      showDefense();
+      return false;
+    }
+  }, true);
+
+  // Basic DevTools detection. This is a deterrent, not real security.
+  let wasOpen = false;
+  const checkDevTools = () => {
+    const threshold = 160;
+    const widthGap = Math.abs(window.outerWidth - window.innerWidth);
+    const heightGap = Math.abs(window.outerHeight - window.innerHeight);
+    const opened = widthGap > threshold || heightGap > threshold;
+    if (opened && !wasOpen) showDefense();
+    wasOpen = opened;
+  };
+  setInterval(checkDevTools, 1200);
+  window.addEventListener('resize', checkDevTools, {passive:true});
+
+  // Make the console react too.
+  try {
+    console.clear();
+    console.log('%c' + msg, 'font-size:24px;font-weight:900;color:#ffd400;background:#050505;padding:8px 14px;border:2px solid #ffd400;');
+    console.log('%c' + sub, 'font-size:13px;color:#ffd400;');
+  } catch (_) {}
+})();
+</script>
+<style>
+  #cyberDefenseToast {
+    position: fixed;
+    left: 50%;
+    bottom: 28px;
+    transform: translate(-50%, 24px) scale(.96);
+    width: min(520px, calc(100vw - 32px));
+    padding: 18px 20px;
+    z-index: 2147483647;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    border: 1px solid rgba(255,212,0,.85);
+    background: rgba(4,4,4,.96);
+    box-shadow: 0 0 30px rgba(255,212,0,.25), inset 0 0 20px rgba(255,212,0,.04);
+    backdrop-filter: blur(12px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+    font-family: Inter, system-ui, sans-serif;
+    text-align: center;
+  }
+  #cyberDefenseToast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0) scale(1);
+  }
+  #cyberDefenseToast .cdt-title {
+    color: #ffd400;
+    font: 800 11px/1.2 Orbitron, monospace;
+    letter-spacing: .18em;
+    margin-bottom: 7px;
+  }
+  #cyberDefenseToast .cdt-msg {
+    color: #fff;
+    font: 900 clamp(18px, 4vw, 25px)/1.1 Orbitron, monospace;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px rgba(255,212,0,.5);
+  }
+  #cyberDefenseToast .cdt-sub {
+    margin-top: 8px;
+    color: rgba(255,255,255,.62);
+    font-size: 11px;
+  }
+</style>
+
+
+<!-- EXIT / LEAVE EXPERIENCE MESSAGE -->
+<div id="exitMessage" aria-hidden="true">
+  <div class="exit-panel">
+    <div class="exit-kicker">SESSION TERMINATED // 001</div>
+    <div class="exit-title">HEY, THANKS FOR VISITING.</div>
+    <div class="exit-main">LET'S COLLAB <span>↗</span></div>
+    <div class="exit-sub">Hope you enjoyed the experience. See you in the next build.</div>
+    <button id="exitStay">STAY IN EXPERIENCE</button>
+  </div>
+</div>
+<style>
+#exitMessage{position:fixed;inset:0;z-index:2147483646;display:grid;place-items:center;background:rgba(2,2,2,.97);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .28s ease,visibility .28s ease;backdrop-filter:blur(14px)}
+#exitMessage.show{opacity:1;visibility:visible;pointer-events:auto}
+.exit-panel{width:min(760px,calc(100vw - 34px));padding:clamp(28px,6vw,64px);border:1px solid rgba(255,212,0,.75);background:linear-gradient(145deg,rgba(255,212,0,.07),rgba(0,0,0,.92));box-shadow:0 0 80px rgba(255,212,0,.14),inset 0 0 35px rgba(255,212,0,.035);text-align:center;position:relative;overflow:hidden}
+.exit-panel:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.025) 4px);pointer-events:none}
+.exit-kicker{position:relative;color:#ffd400;font:700 10px/1.2 Orbitron,monospace;letter-spacing:.22em;margin-bottom:18px}
+.exit-title{position:relative;color:#fff;font:800 clamp(22px,4vw,42px)/1.05 Orbitron,monospace}
+.exit-main{position:relative;margin-top:12px;color:#ffd400;font:900 clamp(34px,8vw,78px)/.95 Orbitron,monospace;text-shadow:0 0 25px rgba(255,212,0,.4)}
+.exit-main span{display:inline-block;font-size:.55em;vertical-align:middle;transform:translateY(-5px)}
+.exit-sub{position:relative;margin:20px auto 26px;color:rgba(255,255,255,.58);font:500 12px/1.7 Inter,system-ui,sans-serif;max-width:520px}
+#exitStay{position:relative;border:1px solid #ffd400;background:#ffd400;color:#050505;padding:12px 18px;font:800 10px/1 Orbitron,monospace;letter-spacing:.12em;cursor:pointer;box-shadow:0 0 20px rgba(255,212,0,.2)}
+#exitStay:hover{box-shadow:0 0 35px rgba(255,212,0,.45);transform:translateY(-1px)}
+</style>
+<script>
+(function(){
+  const overlay=document.getElementById('exitMessage');
+  const stay=document.getElementById('exitStay');
+  let leaving=false;
+  function showExit(){
+    if(leaving)return;
+    overlay.classList.add('show');
+    overlay.setAttribute('aria-hidden','false');
+  }
+  function hideExit(){
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden','true');
+  }
+  // Browser Back: keep the visitor inside the portfolio and show the goodbye screen.
+  history.pushState({portfolioHome:true},'',location.href);
+  window.addEventListener('popstate',function(){
+    history.pushState({portfolioHome:true},'',location.href);
+    showExit();
+  });
+  stay.addEventListener('click',hideExit);
+  // Leaving the page/tab is controlled by the browser. We cannot replace its native close UI,
+  // but this catches navigation attempts where beforeunload is supported.
+  window.addEventListener('beforeunload',function(){
+    // Intentionally no custom browser alert: modern browsers ignore custom text here.
+    leaving=true;
+  });
+  // If fullscreen is exited, return to the portfolio experience instead of pretending it can be forced.
+  document.addEventListener('fullscreenchange',function(){
+    if(!document.fullscreenElement && !leaving) showExit();
+  });
+})();
+</script>
+
 </body>
 </html>
