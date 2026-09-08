@@ -320,8 +320,19 @@ footer{border-top:1px solid #222;padding:28px 0;color:#555;font:600 9px Orbitron
 <script>
 const audio=document.getElementById('bgAudio'),gate=document.getElementById('audioGate'),enter=document.getElementById('enterBtn'),toggle=document.getElementById('audioToggle');
 audio.volume=.32;
-async function startAudio(){try{await audio.play();gate.classList.add('hide');toggle.textContent='AUDIO ON';}catch(e){}}
+async function startAudio(){
+  gate.classList.add('hide');
+  toggle.textContent='AUDIO ON';
+  try{
+    await audio.play();
+  }catch(e){
+    toggle.textContent='AUDIO OFF';
+  }
+}
 enter.addEventListener('click',startAudio);
+gate.addEventListener('click',(e)=>{
+  if(e.target===gate) startAudio();
+});
 toggle.addEventListener('click',async()=>{if(audio.paused){await startAudio()}else{audio.pause();toggle.textContent='AUDIO OFF'}});
 
 const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
