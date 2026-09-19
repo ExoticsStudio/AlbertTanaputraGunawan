@@ -403,6 +403,278 @@ footer .container{display:flex;justify-content:space-between;gap:20px}
  #web-projects .project-visual{flex-basis:270px}
 }
 
+
+/* V14 WEB PORTFOLIO — SCALABLE 2x2 GRID */
+.web-portfolio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+.web-portfolio-card{position:relative;min-width:0;overflow:hidden;background:linear-gradient(145deg,#090909,#060606);border:1px solid #252525;display:flex;flex-direction:column;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease}
+.web-portfolio-card:hover{transform:translateY(-7px);border-color:var(--yellow);box-shadow:0 25px 70px rgba(0,0,0,.55),0 0 34px rgba(255,212,0,.12)}
+.web-card-index{position:absolute;z-index:10;top:43px;right:16px;color:#555;font:800 9px Orbitron;letter-spacing:1px}
+.web-card-head{height:34px;flex:0 0 34px;display:flex;align-items:center;justify-content:space-between;padding:0 15px;border-bottom:1px solid #202020;color:#555;font:700 7px Orbitron;letter-spacing:1px}
+.web-card-head span:first-child{color:var(--yellow)}
+.web-card-preview{height:300px;flex:0 0 300px;position:relative;overflow:hidden;border-bottom:1px solid #222;background:#050505}
+.web-card-preview:before{content:"";position:absolute;inset:17px;z-index:3;border:1px solid rgba(255,212,0,.12);pointer-events:none}
+.exotics-card{background:radial-gradient(circle at 78% 28%,rgba(255,212,0,.16),transparent 28%),linear-gradient(145deg,#050505,#141414)}
+.harja-card{background:radial-gradient(circle at 22% 35%,rgba(255,212,0,.12),transparent 30%),linear-gradient(145deg,#050505,#121212)}
+.tgdmx-card{background:radial-gradient(circle at 75% 68%,rgba(255,212,0,.16),transparent 29%),linear-gradient(145deg,#050505,#151515)}
+.yfb-card{background:radial-gradient(circle at 72% 25%,rgba(255,212,0,.17),transparent 29%),linear-gradient(145deg,#030303,#111)}
+.web-card-mark{position:absolute;z-index:1;left:28px;bottom:24px;color:#eee;font:900 clamp(48px,6vw,82px)/.8 Orbitron;letter-spacing:-5px;text-shadow:0 0 35px rgba(255,212,0,.13);transition:.35s}
+.web-portfolio-card:hover .web-card-mark{color:var(--yellow);text-shadow:0 0 40px rgba(255,212,0,.45);transform:translateX(6px)}
+.web-card-lines{position:absolute;inset:0;z-index:2;background:repeating-linear-gradient(0deg,transparent 0,transparent 4px,rgba(255,255,255,.018) 5px);pointer-events:none}
+.web-card-cta{position:absolute;z-index:6;right:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:11px}
+.web-card-cta span{color:#666;font:700 7px Orbitron;letter-spacing:1.5px}
+.web-preview-btn{appearance:none;cursor:pointer;padding:13px 16px;border:1px solid var(--yellow);background:rgba(255,212,0,.06);color:var(--yellow);font:800 9px Orbitron;letter-spacing:1px;transition:.2s}
+.web-preview-btn:hover{background:var(--yellow);color:#050505;box-shadow:0 0 28px rgba(255,212,0,.3)}
+.web-preview-frame{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff;z-index:7;opacity:0;transition:opacity .4s}
+.web-card-preview.is-loaded .web-preview-frame{opacity:1}
+.web-card-preview.is-loaded .web-card-cta,.web-card-preview.is-loaded .web-card-mark{display:none}
+.web-card-content{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1;min-width:0}
+.web-card-content h3{margin:11px 0 9px;font:800 clamp(19px,2.1vw,25px)/1.1 Orbitron}
+.web-card-content p{margin:0;color:#888;font-size:12px;line-height:1.7}
+.web-card-footer{margin-top:auto;padding-top:17px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #222}
+.web-card-footer span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#444;font:600 7px Orbitron}
+.web-card-footer a{flex:0 0 auto;color:var(--yellow);text-decoration:none;font:800 9px Orbitron;letter-spacing:1px}
+@media(max-width:850px){.web-portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.web-card-preview{height:260px;flex-basis:260px}}
+@media(max-width:650px){.web-portfolio-grid{grid-template-columns:1fr}.web-card-preview{height:250px;flex-basis:250px}}
+
+.convertly-card{background:radial-gradient(circle at 70% 30%,rgba(255,212,0,.15),transparent 29%),linear-gradient(145deg,#050505,#151515)}
+
+/* V17 — PREMIUM WEB PORTFOLIO SHOWCASE */
+#web-projects{isolation:isolate}
+#web-projects .container{width:min(1240px,calc(100% - 64px))}
+.psc-section-head{margin-bottom:58px}
+.portfolio-sites-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:28px;
+  width:100%;
+}
+.portfolio-site-card{
+  position:relative;
+  min-width:0;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:570px;
+  background:linear-gradient(145deg,rgba(15,15,15,.98),rgba(5,5,5,.98));
+  border:1px solid #292929;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .35s,box-shadow .35s;
+}
+.portfolio-site-card:hover{
+  transform:translateY(-9px);
+  border-color:rgba(255,212,0,.85);
+  box-shadow:0 28px 75px rgba(0,0,0,.55),0 0 38px rgba(255,212,0,.11);
+}
+.psc-top{
+  height:48px;
+  flex:0 0 48px;
+  display:grid;
+  grid-template-columns:56px 1fr auto;
+  align-items:center;
+  gap:12px;
+  padding:0 18px;
+  border-bottom:1px solid #242424;
+}
+.psc-index{font:800 10px Orbitron;color:var(--yellow);letter-spacing:1px}
+.psc-status,.psc-cat{font:700 8px Orbitron;letter-spacing:1.1px;color:#666}
+.psc-status i{display:inline-block;width:5px;height:5px;margin-right:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 10px var(--yellow)}
+.psc-cat{text-align:right}
+.psc-visual{
+  position:relative;
+  height:325px;
+  flex:0 0 325px;
+  overflow:hidden;
+  border-bottom:1px solid #242424;
+  background:#050505;
+}
+.psc-visual:after{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(255,212,0,.11);
+  pointer-events:none;
+  z-index:3;
+}
+.exotics-card{background:radial-gradient(circle at 75% 27%,rgba(255,212,0,.19),transparent 28%),linear-gradient(145deg,#050505,#171717)}
+.harja-card{background:radial-gradient(circle at 22% 30%,rgba(255,212,0,.14),transparent 30%),linear-gradient(145deg,#050505,#121212)}
+.tgdmx-card{background:radial-gradient(circle at 72% 70%,rgba(255,212,0,.18),transparent 30%),linear-gradient(145deg,#050505,#151515)}
+.yfb-card{background:radial-gradient(circle at 72% 25%,rgba(255,212,0,.19),transparent 30%),linear-gradient(145deg,#030303,#121212)}
+.convertly-card{background:radial-gradient(circle at 70% 35%,rgba(255,212,0,.16),transparent 29%),linear-gradient(145deg,#050505,#151515)}
+.psc-grid{
+  position:absolute;inset:0;opacity:.16;
+  background-image:linear-gradient(rgba(255,212,0,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(255,212,0,.16) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:radial-gradient(circle at center,black,transparent 78%);
+}
+.psc-orbit{
+  position:absolute;width:330px;height:330px;left:50%;top:50%;
+  transform:translate(-50%,-50%) rotate(-22deg);
+  border:1px solid rgba(255,212,0,.16);
+  border-radius:50%;
+  box-shadow:0 0 40px rgba(255,212,0,.05);
+  transition:.5s;
+}
+.portfolio-site-card:hover .psc-orbit{transform:translate(-50%,-50%) rotate(18deg) scale(1.08);border-color:rgba(255,212,0,.3)}
+.psc-mark{
+  position:absolute;left:30px;bottom:25px;z-index:2;
+  color:#eee;font:900 clamp(52px,6vw,86px)/.8 Orbitron;
+  letter-spacing:-5px;
+  text-shadow:0 0 35px rgba(255,212,0,.12);
+  transition:.4s;
+}
+.portfolio-site-card:hover .psc-mark{color:var(--yellow);transform:translateX(7px);text-shadow:0 0 42px rgba(255,212,0,.42)}
+.psc-preview{
+  position:absolute;right:26px;top:50%;transform:translateY(-50%);
+  z-index:6;display:flex;flex-direction:column;align-items:flex-end;gap:12px;
+}
+.psc-preview span{color:#666;font:700 8px Orbitron;letter-spacing:1.4px}
+.psc-preview-btn{
+  border:1px solid var(--yellow);
+  background:rgba(255,212,0,.055);
+  color:var(--yellow);
+  padding:14px 17px;
+  cursor:pointer;
+  font:800 9px Orbitron;letter-spacing:1px;
+  transition:.2s;
+}
+.psc-preview-btn:hover{background:var(--yellow);color:#050505;box-shadow:0 0 30px rgba(255,212,0,.3)}
+.psc-frame{
+  position:absolute;inset:0;width:100%;height:100%;
+  border:0;background:#fff;opacity:0;z-index:8;
+  transition:opacity .4s;
+}
+.psc-visual.loaded .psc-frame{opacity:1}
+.psc-visual.loaded .psc-preview,.psc-visual.loaded .psc-mark,.psc-visual.loaded .psc-orbit{display:none}
+.psc-body{display:flex;flex-direction:column;flex:1;padding:25px 27px 23px;min-width:0}
+.psc-label{color:var(--yellow);font:700 8px Orbitron;letter-spacing:1.2px}
+.psc-body h3{margin:11px 0 10px;font:800 clamp(21px,2.2vw,28px)/1.1 Orbitron;letter-spacing:-.7px}
+.psc-body p{margin:0;color:#8d8d8d;font-size:12px;line-height:1.75;max-width:700px}
+.psc-bottom{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  margin-top:auto;padding-top:18px;border-top:1px solid #242424;
+}
+.psc-bottom span{color:#444;font:600 8px Orbitron;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.psc-bottom a{flex:0 0 auto;color:var(--yellow);font:800 9px Orbitron;letter-spacing:1px}
+@media(max-width:950px){
+  #web-projects .container{width:min(100% - 40px,760px)}
+  .portfolio-sites-grid{gap:18px}
+  .portfolio-site-card{min-height:520px}
+  .psc-visual{height:285px;flex-basis:285px}
+}
+@media(max-width:680px){
+  #web-projects .container{width:calc(100% - 32px)}
+  .portfolio-sites-grid{grid-template-columns:1fr;gap:18px}
+  .portfolio-site-card{min-height:500px}
+  .psc-top{grid-template-columns:48px 1fr}
+  .psc-cat{display:none}
+  .psc-visual{height:255px;flex-basis:255px}
+}
+
+.stickava-card{background:radial-gradient(circle at 70% 28%,rgba(255,212,0,.18),transparent 29%),linear-gradient(145deg,#030303,#151515)}
+
+/* V19 — REAL WEBSITE SCREENSHOT PREVIEWS */
+.psc-shot{
+  position:absolute;inset:0;width:100%;height:100%;
+  display:block;border:0;background:#0b0b0b;
+  object-fit:cover;object-position:top center;
+  opacity:0;z-index:8;
+  transition:opacity .45s ease,transform .55s ease;
+}
+.psc-visual.loaded .psc-shot{opacity:1}
+.portfolio-site-card:hover .psc-visual:not(.loaded) .psc-mark{transform:translateX(7px) scale(1.02)}
+.psc-visual.loaded .psc-preview,
+.psc-visual.loaded .psc-mark,
+.psc-visual.loaded .psc-orbit,
+.psc-visual.loaded .psc-grid{display:none}
+.psc-visual.loaded:after{border-color:rgba(255,212,0,.28)}
+
+</style>
+<style id="web-projects-impact-style">
+/* V20 — WEB PROJECTS MATCHES "PROJECTS WITH IMPACT" */
+#web-projects{isolation:isolate}
+#web-projects .container{width:min(1240px,calc(100% - 64px))}
+#web-projects .web-projects-head{margin-bottom:42px}
+#web-projects .web-impact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  width:100%;
+}
+#web-projects .web-impact-card{
+  position:relative;
+  min-width:0;
+  min-height:208px;
+  box-sizing:border-box;
+  padding:28px 20px 22px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  background:linear-gradient(145deg,#090909,#0b0b0b);
+  border:1px solid #292929;
+  transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease;
+}
+#web-projects .web-impact-card::after{
+  content:"";
+  position:absolute;
+  width:112px;
+  height:112px;
+  right:-38px;
+  top:-38px;
+  border:1px solid rgba(255,212,0,.24);
+  transform:rotate(45deg);
+  pointer-events:none;
+}
+#web-projects .web-impact-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,212,0,.78);
+  box-shadow:0 20px 45px rgba(0,0,0,.42),0 0 28px rgba(255,212,0,.08);
+}
+#web-projects .web-impact-card .tag{
+  position:relative;
+  z-index:1;
+  color:var(--yellow);
+  font:700 8px Orbitron;
+  letter-spacing:1.1px;
+}
+#web-projects .web-impact-card h3{
+  position:relative;
+  z-index:1;
+  margin:20px 0 10px;
+  color:#eee;
+  font:800 clamp(17px,1.55vw,21px)/1.15 Orbitron;
+  letter-spacing:-.35px;
+}
+#web-projects .web-impact-card p{
+  position:relative;
+  z-index:1;
+  margin:0;
+  max-width:95%;
+  color:#858585;
+  font-size:11px;
+  line-height:1.62;
+}
+#web-projects .web-impact-card a{
+  position:relative;
+  z-index:1;
+  margin-top:auto;
+  padding-top:18px;
+  color:var(--yellow);
+  text-decoration:none;
+  font:800 8px Orbitron;
+  letter-spacing:.8px;
+}
+#web-projects .web-impact-card a:hover{
+  text-shadow:0 0 14px rgba(255,212,0,.55);
+}
+@media(max-width:1000px){
+  #web-projects .web-impact-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+}
+@media(max-width:680px){
+  #web-projects .container{width:calc(100% - 32px)}
+  #web-projects .web-impact-grid{grid-template-columns:1fr;gap:14px}
+  #web-projects .web-impact-card{min-height:190px;padding:24px 19px 20px}
+  #web-projects .web-impact-card h3{margin-top:16px}
+}
 </style>
 <style id="credentials-desktop-fix">
 /* CREDENTIALS / EDUCATION — DESKTOP & LAPTOP HARDENED LAYOUT */
@@ -726,77 +998,65 @@ footer .container{display:flex;justify-content:space-between;gap:20px}
 </section>
 
 
+
 <section class="section" id="web-projects">
-<div class="container">
-  <div class="section-head reveal">
-    <div><div class="eyebrow">07 / WEB PROJECTS</div><h2>Built on<br>the web.</h2></div>
-    <p class="section-intro">Interactive digital experiences, platforms and community systems built across different domains.</p>
+  <div class="container">
+    <div class="section-head reveal web-projects-head">
+      <div>
+        <div class="eyebrow">07 / WEB PROJECTS</div>
+        <h2>Built on<br>the web.</h2>
+      </div>
+      <p class="section-intro">A portfolio of websites, web apps and digital experiences built across different industries and use cases.</p>
+    </div>
+
+    <div class="web-impact-grid">
+
+      <article class="web-impact-card reveal">
+        <span class="tag">MEDIA / GAMING</span>
+        <h3>EXOTICS MEDIA</h3>
+        <p>Gaming media platform for news, entertainment coverage and digital media projects.</p>
+        <a href="https://exoticsmedia.vercel.app/" target="_blank" rel="noopener noreferrer">OPEN PROJECT →</a>
+      </article>
+
+      <article class="web-impact-card reveal">
+        <span class="tag">EDUCATION / STEM</span>
+        <h3>HARJADI TUTORING</h3>
+        <p>International tutoring platform for Mathematics, Physics and Chemistry across Cambridge, IGCSE, AS &amp; A Level and IB.</p>
+        <a href="https://harjaditutoring.com/" target="_blank" rel="noopener noreferrer">OPEN PROJECT →</a>
+      </article>
+
+      <article class="web-impact-card reveal">
+        <span class="tag">DIGITAL MARKETING</span>
+        <h3>TGDMX</h3>
+        <p>Digital marketing workspace and monitoring ecosystem for analytics, workflows, role-based access and performance operations.</p>
+        <a href="https://tgdmx.vercel.app/" target="_blank" rel="noopener noreferrer">OPEN PROJECT →</a>
+      </article>
+
+      <article class="web-impact-card reveal">
+        <span class="tag">GAMING COMMUNITY</span>
+        <h3>YFB — KINGDOM #351</h3>
+        <p>Community portal for YFB and Kingdom #351 with announcements, events, guides, history and Bear Hunt resources.</p>
+        <a href="https://yfbclan.vercel.app/" target="_blank" rel="noopener noreferrer">OPEN PROJECT →</a>
+      </article>
+
+      <article class="web-impact-card reveal">
+        <span class="tag">UTILITY / PRODUCTIVITY</span>
+        <h3>CONVERTLY</h3>
+        <p>Browser-based file conversion utility designed for fast, simple and privacy-friendly document workflows.</p>
+        <a href="https://convertly-nu.vercel.app/" target="_blank" rel="noopener noreferrer">OPEN PROJECT →</a>
+      </article>
+
+      <article class="web-impact-card reveal">
+        <span class="tag">RUNNING / GENERATOR</span>
+        <h3>STICKAVA RUN</h3>
+        <p>Interactive running card generator for creating personalized run visuals with distance, time, pace and running-focused layouts.</p>
+        <a href="https://stickavarun.vercel.app/" target="_blank" rel="noopener noreferrer">OPEN PROJECT →</a>
+      </article>
+
+    </div>
   </div>
-  <div class="web-project-grid interactive-projects">
-
-    <article class="web-project interactive-project reveal">
-      <div class="project-number">01</div>
-      <div class="project-topline"><span>LIVE WEBSITE</span><span>GAMING / MEDIA</span></div>
-      <div class="project-visual exotics-visual">
-        <div class="project-glow"></div><div class="project-symbol">EM</div><div class="project-scan"></div>
-        <div class="project-preview-state"><span>WEBSITE PREVIEW</span><button class="preview-now-btn" type="button">PREVIEW NOW ↗</button></div>
-        <iframe class="live-preview-frame" data-src="https://exoticsmedia.vercel.app/" title="Exotics Media live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div class="web-project-body"><div class="tag">GAMING NEWS &amp; MEDIA</div><h3>Exotics Media</h3>
-        <p>Gaming media platform featuring gaming content, news, entertainment coverage and digital media projects.</p>
-        <div class="project-tags"><span>MEDIA</span><span>GAMING</span><span>WEB</span></div>
-        <div class="web-project-actions"><a class="project-link" href="https://exoticsmedia.vercel.app/" target="_blank" rel="noopener noreferrer">VISIT WEBSITE <b>↗</b></a><span class="project-url">exoticsmedia.vercel.app</span></div>
-      </div>
-    </article>
-
-    <article class="web-project interactive-project reveal">
-      <div class="project-number">02</div>
-      <div class="project-topline"><span>LIVE WEBSITE</span><span>EDUCATION / STEM</span></div>
-      <div class="project-visual harja-visual">
-        <div class="project-glow"></div><div class="project-symbol">HT</div><div class="project-scan"></div>
-        <div class="project-preview-state"><span>WEBSITE PREVIEW</span><button class="preview-now-btn" type="button">PREVIEW NOW ↗</button></div>
-        <iframe class="live-preview-frame" data-src="https://harjaditutoring.com/" title="Harjadi Tutoring live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div class="web-project-body"><div class="tag">INTERNATIONAL TUTORING</div><h3>Harjadi Tutoring</h3>
-        <p>International tutoring platform for Mathematics, Physics and Chemistry across Cambridge, IGCSE, AS &amp; A Level, IB and international-school pathways.</p>
-        <div class="project-tags"><span>EDUCATION</span><span>STEM</span><span>WEB</span></div>
-        <div class="web-project-actions"><a class="project-link" href="https://harjaditutoring.com/" target="_blank" rel="noopener noreferrer">VISIT WEBSITE <b>↗</b></a><span class="project-url">harjaditutoring.com</span></div>
-      </div>
-    </article>
-
-    <article class="web-project interactive-project reveal">
-      <div class="project-number">03</div>
-      <div class="project-topline"><span>LIVE WEB APP</span><span>DIGITAL MARKETING</span></div>
-      <div class="project-visual tgdmx-visual">
-        <div class="project-glow"></div><div class="project-symbol">TGX</div><div class="project-scan"></div>
-        <div class="project-preview-state"><span>WEBSITE PREVIEW</span><button class="preview-now-btn" type="button">PREVIEW NOW ↗</button></div>
-        <iframe class="live-preview-frame" data-src="https://tgdmx.vercel.app/" title="TGDMX live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div class="web-project-body"><div class="tag">DIGITAL MARKETING SYSTEM</div><h3>TGDMX</h3>
-        <p>Digital marketing workspace and monitoring ecosystem built around team workflows, analytics, role-based access and performance operations.</p>
-        <div class="project-tags"><span>ANALYTICS</span><span>WORKFLOW</span><span>SYSTEM</span></div>
-        <div class="web-project-actions"><a class="project-link" href="https://tgdmx.vercel.app/" target="_blank" rel="noopener noreferrer">VISIT WEBSITE <b>↗</b></a><span class="project-url">tgdmx.vercel.app</span></div>
-      </div>
-    </article>
-
-    <article class="web-project interactive-project reveal">
-      <div class="project-number">04</div>
-      <div class="project-topline"><span>LIVE WEBSITE</span><span>GAMING COMMUNITY</span></div>
-      <div class="project-visual yfb-visual">
-        <div class="project-glow"></div><div class="project-symbol">YFB</div><div class="project-scan"></div>
-        <div class="project-preview-state"><span>WEBSITE PREVIEW</span><button class="preview-now-btn" type="button">PREVIEW NOW ↗</button></div>
-        <iframe class="live-preview-frame" data-src="https://yfb-zeta.vercel.app/" title="YFB live preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      <div class="web-project-body"><div class="tag">KINGSHOT / COMMUNITY</div><h3>YFB — Kingdom #351</h3>
-        <p>Community portal for YFB and Kingdom #351 covering announcements, events, guides, member information, kingdom history and Bear Hunt resources.</p>
-        <div class="project-tags"><span>COMMUNITY</span><span>GAMING</span><span>PORTAL</span></div>
-        <div class="web-project-actions"><a class="project-link" href="https://yfb-zeta.vercel.app/" target="_blank" rel="noopener noreferrer">VISIT WEBSITE <b>↗</b></a><span class="project-url">yfb-zeta.vercel.app</span></div>
-      </div>
-    </article>
-
-  </div>
-</div>
 </section>
+
 
 <section class="section" id="credentials">
 <div class="container">
@@ -1202,5 +1462,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+document.querySelectorAll('.web-preview-btn').forEach(function(btn){
+btn.addEventListener('click',function(e){
+e.preventDefault();e.stopPropagation();
+const preview=btn.closest('.web-card-preview'),frame=preview.querySelector('.web-preview-frame');
+if(!frame.getAttribute('src')) frame.setAttribute('src',btn.dataset.url);
+preview.classList.add('is-loaded');
+});
+});
+});
+</script>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.psc-preview-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      const visual = btn.closest('.psc-visual');
+      const shot = visual.querySelector('.psc-shot');
+      if (!shot.getAttribute('src')) shot.setAttribute('src', btn.dataset.shot);
+      visual.classList.add('loaded');
+    });
+  });
+});
+</script>
 </body>
 </html>
